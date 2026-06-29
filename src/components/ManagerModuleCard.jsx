@@ -3,6 +3,16 @@ import { navigateToPage } from "../utils/navigation.js";
 
 export function ManagerModuleCard({ module }) {
   const Icon = module.icon;
+  const isExternalLink = module.href?.startsWith("http");
+
+  function openModule() {
+    if (isExternalLink) {
+      window.location.href = module.href;
+      return;
+    }
+
+    navigateToPage(module.href);
+  }
 
   return (
     <article className="rounded-[2rem] border border-white/80 bg-white/80 p-6 shadow-soft backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-lift">
@@ -18,7 +28,7 @@ export function ManagerModuleCard({ module }) {
       <p className="mt-3 max-w-xl leading-7 text-apple-muted">{module.description}</p>
       <button
         type="button"
-        onClick={() => navigateToPage(module.href)}
+        onClick={openModule}
         className="mt-8 inline-flex items-center gap-2 rounded-full bg-apple-text px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-apple-blue"
       >
         {module.cta}
