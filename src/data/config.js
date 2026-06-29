@@ -202,7 +202,8 @@ export const pageResources = {
         title: "組織圖",
         description: "團隊組織架構、職責分工與聯繫節點。",
         icon: Network,
-        status: "主管限定"
+        status: "主管限定",
+        href: "https://kiddd1995.github.io/org-chart-system/"
       },
       {
         title: "憲法專區",
