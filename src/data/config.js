@@ -169,7 +169,8 @@ export const pageResources = {
         title: "業務制度",
         description: "制度規則、作業流程與內部規範說明。",
         icon: ClipboardList,
-        status: "制度查詢"
+        status: "制度查詢",
+        href: "https://kiddd1995.github.io/business-system/"
       },
       {
         title: "商品專區",
