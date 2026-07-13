@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Layout } from "./components/Layout.jsx";
 import { DashboardPage } from "./pages/DashboardPage.jsx";
 import { CategoryPage } from "./pages/CategoryPage.jsx";
+import { AdminDownloadsPage } from "./pages/AdminDownloadsPage.jsx";
 import { ManagerPage } from "./pages/ManagerPage.jsx";
 import { OrgChartPage } from "./pages/OrgChartPage.jsx";
 import { OwnerOrgChartEditorPage } from "./pages/OwnerOrgChartEditorPage.jsx";
@@ -23,6 +24,8 @@ function App() {
     <Layout currentPage={currentPage}>
       {currentPage === "manager" ? (
         <ManagerPage />
+      ) : currentPage === "admin/downloads" ? (
+        <AdminDownloadsPage />
       ) : currentPage === "manager/org-chart" ? (
         <OrgChartPage />
       ) : currentPage === "owner/org-chart-editor" ? (

@@ -91,7 +91,8 @@ export const pageResources = {
         title: "下載區",
         description: "放置常用表單、內部文件與範本檔案。",
         icon: Download,
-        status: "可擴充"
+        status: "可擴充",
+        href: "/admin/downloads"
       },
       {
         title: "標的連結",
@@ -106,6 +107,15 @@ export const pageResources = {
         status: "範例資料"
       }
     ]
+  },
+  "admin/downloads": {
+    eyebrow: "Administrative Downloads",
+    title: "下載區",
+    subtitle: "常用表單、申請文件與工作資料下載",
+    description: "集中管理行政常用文件，支援關鍵字搜尋、分類篩選與快速下載。",
+    icon: Download,
+    backHref: "/admin",
+    backLabel: "返回行政資源"
   },
   schedule: {
     eyebrow: "Learning Schedule",
