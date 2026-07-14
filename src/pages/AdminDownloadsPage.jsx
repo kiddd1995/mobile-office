@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
-import { ArrowLeft, Download, FileDown, Inbox, Search } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink, FileDown, Inbox, Search } from "lucide-react";
 import { pageResources } from "../data/config.js";
 import { downloadFiles } from "../data/downloadFiles.js";
 import { navigateToPage } from "../utils/navigation.js";
 
-const categories = ["全部", "常用表單", "行政申請", "要保書範例", "商品文件", "其他資料"];
+const categories = ["全部", "要保書", "帳務相關", "磐石三寶", "建議書", "其他"];
+const googleDriveFolderUrl = "https://drive.google.com/drive/folders/1H2m1d1oMZ7WI9U6NvPOTiVjdTXLFIcoQ";
 
 export function AdminDownloadsPage() {
   const page = pageResources["admin/downloads"];
@@ -18,7 +19,7 @@ export function AdminDownloadsPage() {
 
     return activeFiles.filter((file) => {
       const matchesCategory = activeCategory === "全部" || file.category === activeCategory;
-      const searchableText = [file.title, file.description, file.category, file.fileType, file.fileName]
+      const searchableText = [file.title, file.description, file.category, file.fileType, file.fileName, file.fileUrl]
         .join(" ")
         .toLowerCase();
       const matchesKeyword = !normalizedKeyword || searchableText.includes(normalizedKeyword);
@@ -47,6 +48,15 @@ export function AdminDownloadsPage() {
           </p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-6xl">{page.title}</h1>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-apple-muted">{page.subtitle}</p>
+          <a
+            href={googleDriveFolderUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-4 py-2 text-sm font-semibold text-apple-muted shadow-sm backdrop-blur-xl transition hover:text-apple-text"
+          >
+            <ExternalLink size={16} />
+            查看全部文件
+          </a>
         </div>
         <div className="hidden justify-self-end rounded-[2rem] bg-white/80 p-6 text-apple-blue shadow-soft backdrop-blur-xl lg:grid">
           <Download size={46} />
@@ -101,7 +111,7 @@ export function AdminDownloadsPage() {
       ) : (
         <div className="grid gap-4">
           {filteredFiles.map((file) => {
-            const fileHref = `${import.meta.env.BASE_URL}downloads/${file.fileName}`;
+            const fileLink = getFileLink(file);
 
             return (
               <article
@@ -130,16 +140,22 @@ export function AdminDownloadsPage() {
                     </dl>
                   </div>
 
-                  <a
-                    href={fileHref}
-                    download
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-apple-blue px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lift md:w-auto"
-                  >
-                    <Download size={16} />
-                    下載
-                  </a>
+                  {fileLink ? (
+                    <a
+                      href={fileLink.href}
+                      download={fileLink.isExternal ? undefined : true}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-apple-blue px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lift md:w-auto"
+                    >
+                      <Download size={16} />
+                      {fileLink.label}
+                    </a>
+                  ) : (
+                    <span className="inline-flex w-full items-center justify-center rounded-full bg-apple-bg px-5 py-3 text-sm font-semibold text-apple-muted md:w-auto">
+                      檔案尚未提供
+                    </span>
+                  )}
                 </div>
               </article>
             );
@@ -148,6 +164,29 @@ export function AdminDownloadsPage() {
       )}
     </section>
   );
+}
+
+function getFileLink(file) {
+  const fileUrl = file.fileUrl?.trim();
+  const fileName = file.fileName?.trim();
+
+  if (fileUrl) {
+    return {
+      href: fileUrl,
+      isExternal: true,
+      label: "開啟"
+    };
+  }
+
+  if (fileName) {
+    return {
+      href: `${import.meta.env.BASE_URL}downloads/${fileName}`,
+      isExternal: false,
+      label: "下載"
+    };
+  }
+
+  return null;
 }
 
 function FileMeta({ label, value }) {
