@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout.jsx";
 import { DashboardPage } from "./pages/DashboardPage.jsx";
 import { CategoryPage } from "./pages/CategoryPage.jsx";
 import { AdminDownloadsPage } from "./pages/AdminDownloadsPage.jsx";
+import { AdminTargetLinksPage } from "./pages/AdminTargetLinksPage.jsx";
 import { ManagerPage } from "./pages/ManagerPage.jsx";
 import { OrgChartPage } from "./pages/OrgChartPage.jsx";
 import { OwnerOrgChartEditorPage } from "./pages/OwnerOrgChartEditorPage.jsx";
@@ -26,6 +27,8 @@ function App() {
         <ManagerPage />
       ) : currentPage === "admin/downloads" ? (
         <AdminDownloadsPage />
+      ) : currentPage === "admin/links" ? (
+        <AdminTargetLinksPage />
       ) : currentPage === "manager/org-chart" ? (
         <OrgChartPage />
       ) : currentPage === "owner/org-chart-editor" ? (

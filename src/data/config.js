@@ -98,7 +98,8 @@ export const pageResources = {
         title: "標的連結",
         description: "集中管理常用網站、專案網址與外部查詢入口。",
         icon: Link2,
-        status: "連結管理"
+        status: "連結管理",
+        href: "/admin/links"
       },
       {
         title: "要保書範例",
@@ -114,6 +115,15 @@ export const pageResources = {
     subtitle: "常用表單、申請文件與工作資料下載",
     description: "集中管理行政常用文件，支援關鍵字搜尋、分類篩選與快速下載。",
     icon: Download,
+    backHref: "/admin",
+    backLabel: "返回行政資源"
+  },
+  "admin/links": {
+    eyebrow: "Administrative Links",
+    title: "標的連結",
+    subtitle: "集中管理商品網頁、查詢系統與外部連結",
+    description: "集中管理商品網頁、查詢系統與外部連結，支援關鍵字搜尋、分類篩選與快速前往。",
+    icon: Link2,
     backHref: "/admin",
     backLabel: "返回行政資源"
   },
