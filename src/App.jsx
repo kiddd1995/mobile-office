@@ -1,8 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Layout } from "./components/Layout.jsx";
+import { DashboardPage } from "./pages/DashboardPage.jsx";
+import { CategoryPage } from "./pages/CategoryPage.jsx";
+import { AdminDownloadsPage } from "./pages/AdminDownloadsPage.jsx";
+import { AdminTargetLinksPage } from "./pages/AdminTargetLinksPage.jsx";
+import { ManagerPage } from "./pages/ManagerPage.jsx";
 import { OrgChartPage } from "./pages/OrgChartPage.jsx";
 import { OwnerOrgChartEditorPage } from "./pages/OwnerOrgChartEditorPage.jsx";
-import { getPageFromHash, navigateToPage } from "./utils/navigation.js";
+import { getPageFromHash } from "./utils/navigation.js";
+import { pageResources } from "./data/config.js";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(getPageFromHash());
@@ -13,19 +19,25 @@ function App() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const isOrgChartRoute = currentPage === "manager/org-chart" || currentPage === "owner/org-chart-editor";
-
-  useEffect(() => {
-    if (!isOrgChartRoute) navigateToPage("manager/org-chart");
-  }, [isOrgChartRoute]);
+  const activeCategory = useMemo(() => pageResources[currentPage], [currentPage]);
 
   return (
     <Layout currentPage={currentPage}>
-      {currentPage === "manager/org-chart" || !isOrgChartRoute ? (
+      {currentPage === "manager" ? (
+        <ManagerPage />
+      ) : currentPage === "admin/downloads" ? (
+        <AdminDownloadsPage />
+      ) : currentPage === "admin/links" ? (
+        <AdminTargetLinksPage />
+      ) : currentPage === "manager/org-chart" ? (
         <OrgChartPage />
       ) : currentPage === "owner/org-chart-editor" ? (
         <OwnerOrgChartEditorPage />
-      ) : null}
+      ) : activeCategory ? (
+        <CategoryPage pageId={currentPage} page={activeCategory} />
+      ) : (
+        <DashboardPage />
+      )}
     </Layout>
   );
 }
