@@ -9,7 +9,7 @@ export const managerHome = {
       id: "org-chart",
       title: "組織圖",
       description: "查看團隊層級、部門分工與主要負責人。",
-      href: "/manager/org-chart",
+      href: "https://kiddd1995.github.io/org-chart-system/",
       cta: "查看組織圖",
       icon: Network
     }

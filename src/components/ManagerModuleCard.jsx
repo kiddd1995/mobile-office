@@ -3,6 +3,13 @@ import { navigateToPage } from "../utils/navigation.js";
 
 export function ManagerModuleCard({ module }) {
   const Icon = module.icon;
+  const isExternalLink = module.href?.startsWith("http");
+  const actionClassName =
+    "mt-8 inline-flex items-center gap-2 rounded-full bg-apple-text px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-apple-blue";
+
+  function openInternalModule() {
+    navigateToPage(module.href);
+  }
 
   return (
     <article className="rounded-[2rem] border border-white/80 bg-white/80 p-6 shadow-soft backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-lift">
@@ -16,14 +23,17 @@ export function ManagerModuleCard({ module }) {
       </div>
       <h2 className="mt-8 text-2xl font-semibold tracking-tight">{module.title}</h2>
       <p className="mt-3 max-w-xl leading-7 text-apple-muted">{module.description}</p>
-      <button
-        type="button"
-        onClick={() => navigateToPage(module.href)}
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-apple-text px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-apple-blue"
-      >
-        {module.cta}
-        <ArrowUpRight size={16} />
-      </button>
+      {isExternalLink ? (
+        <a href={module.href} className={actionClassName}>
+          {module.cta}
+          <ArrowUpRight size={16} />
+        </a>
+      ) : (
+        <button type="button" onClick={openInternalModule} className={actionClassName}>
+          {module.cta}
+          <ArrowUpRight size={16} />
+        </button>
+      )}
     </article>
   );
 }

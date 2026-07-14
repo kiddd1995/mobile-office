@@ -3,10 +3,12 @@ export function ResourceList({ resources }) {
     <div className="grid gap-4 md:grid-cols-2">
       {resources.map((resource) => {
         const Icon = resource.icon;
-        return (
+        const isExternalLink = resource.href?.startsWith("http");
+        const cardContent = (
           <article
-            key={resource.title}
-            className="rounded-[1.75rem] border border-white/80 bg-white/80 p-5 shadow-soft backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-lift"
+            className={`h-full rounded-[1.75rem] border border-white/80 bg-white/80 p-5 shadow-soft backdrop-blur-xl transition ${
+              resource.href ? "hover:-translate-y-0.5 hover:shadow-lift" : ""
+            }`}
           >
             <div className="flex items-start justify-between gap-4">
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-apple-bg text-apple-blue">
@@ -19,6 +21,22 @@ export function ResourceList({ resources }) {
             <h3 className="mt-6 text-xl font-semibold tracking-tight">{resource.title}</h3>
             <p className="mt-2 leading-7 text-apple-muted">{resource.description}</p>
           </article>
+        );
+
+        if (!resource.href) return <div key={resource.title}>{cardContent}</div>;
+
+        if (isExternalLink) {
+          return (
+            <a key={resource.title} href={resource.href} className="block h-full">
+              {cardContent}
+            </a>
+          );
+        }
+
+        return (
+          <a key={resource.title} href={`#${resource.href.startsWith("/") ? resource.href : `/${resource.href}`}`} className="block h-full">
+            {cardContent}
+          </a>
         );
       })}
     </div>
