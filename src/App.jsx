@@ -5,8 +5,6 @@ import { CategoryPage } from "./pages/CategoryPage.jsx";
 import { AdminDownloadsPage } from "./pages/AdminDownloadsPage.jsx";
 import { AdminTargetLinksPage } from "./pages/AdminTargetLinksPage.jsx";
 import { ManagerPage } from "./pages/ManagerPage.jsx";
-import { OrgChartPage } from "./pages/OrgChartPage.jsx";
-import { OwnerOrgChartEditorPage } from "./pages/OwnerOrgChartEditorPage.jsx";
 import { getPageFromHash } from "./utils/navigation.js";
 import { pageResources } from "./data/config.js";
 
@@ -29,10 +27,6 @@ function App() {
         <AdminDownloadsPage />
       ) : currentPage === "admin/links" ? (
         <AdminTargetLinksPage />
-      ) : currentPage === "manager/org-chart" ? (
-        <OrgChartPage />
-      ) : currentPage === "owner/org-chart-editor" ? (
-        <OwnerOrgChartEditorPage />
       ) : activeCategory ? (
         <CategoryPage pageId={currentPage} page={activeCategory} />
       ) : (

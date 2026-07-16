@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { CategoryFilter } from "../components/CategoryFilter.jsx";
 import { DashboardGrid } from "../components/DashboardGrid.jsx";
+import { HeroSection } from "../components/HeroSection.jsx";
 import { categoryCards } from "../data/config.js";
 
 export function DashboardPage() {
@@ -13,6 +14,7 @@ export function DashboardPage() {
 
   return (
     <>
+      <HeroSection />
       <section id="resources" className="scroll-mt-24 py-5">
         <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>

@@ -1,11 +1,10 @@
-import { LockKeyhole, Network } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import { filters, siteConfig } from "../data/config.js";
 import { navigateToPage } from "../utils/navigation.js";
 
 export function Header({ currentPage }) {
-  const navItems = [
-    { id: "manager/org-chart", title: "組織圖查看" },
-    { id: "owner/org-chart-editor", title: "組織圖編輯", protected: true }
-  ];
+  const navItems = filters.filter((filter) => filter.id !== "all");
+  const activePage = currentPage?.split("/")?.[0] ?? "home";
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/70 bg-apple-bg/80 backdrop-blur-2xl">
@@ -14,14 +13,14 @@ export function Header({ currentPage }) {
           className="group flex items-center gap-3 rounded-full text-left"
           onClick={() => navigateToPage(null)}
           type="button"
-          aria-label="回到組織圖"
+          aria-label="回到首頁"
         >
           <span className="grid h-9 w-9 place-items-center rounded-full bg-apple-text text-white shadow-soft transition-transform group-hover:scale-105">
-            <Network size={18} />
+            <Sparkles size={18} />
           </span>
           <span>
-            <span className="block text-sm font-semibold tracking-tight">組織圖系統</span>
-            <span className="hidden text-xs text-apple-muted sm:block">Org Chart System</span>
+            <span className="block text-sm font-semibold tracking-tight">{siteConfig.name}</span>
+            <span className="hidden text-xs text-apple-muted sm:block">{siteConfig.accentLabel}</span>
           </span>
         </button>
 
@@ -32,13 +31,12 @@ export function Header({ currentPage }) {
               type="button"
               onClick={() => navigateToPage(item.id)}
               className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium transition ${
-                currentPage === item.id
+                activePage === item.id
                   ? "bg-apple-text text-white shadow-sm"
                   : "text-apple-muted hover:bg-white hover:text-apple-text"
               }`}
             >
-              {item.protected ? <LockKeyhole size={13} /> : null}
-              {item.title}
+              {item.label}
             </button>
           ))}
         </div>
