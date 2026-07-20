@@ -1,5 +1,6 @@
 import {
   BriefcaseBusiness,
+  Calculator,
   CalendarDays,
   ChartNoAxesCombined,
   ClipboardList,
@@ -33,7 +34,8 @@ export const filters = [
   { id: "schedule", label: "課表" },
   { id: "resources", label: "資源中心" },
   { id: "business", label: "業務中心" },
-  { id: "leader", label: "主管專區" }
+  { id: "leader", label: "主管專區" },
+  { id: "calculators", label: "各類計算機" }
 ];
 
 export const categoryCards = [
@@ -77,6 +79,14 @@ export const categoryCards = [
     cta: "密碼進入",
     icon: Crown,
     protected: true
+  },
+  {
+    id: "calculators",
+    number: "06",
+    title: "各類計算機",
+    description: "房信貸計算機／配息計算機",
+    cta: "開啟計算機",
+    icon: Calculator
   }
 ];
 
@@ -203,6 +213,27 @@ export const pageResources = {
         description: "商品比較、總表與重點整理。",
         icon: ScrollText,
         status: "統整資料"
+      }
+    ]
+  },
+  calculators: {
+    eyebrow: "Calculators",
+    title: "各類計算機",
+    description: "集中提供常用試算工具，快速完成貸款與配息試算。",
+    icon: Calculator,
+    resources: [
+      {
+        title: "房信貸計算機",
+        description: "快速試算房貸與信貸的還款資訊。",
+        icon: Home,
+        status: "開啟計算機",
+        href: "https://kiddd1995.github.io/loan-calculator/"
+      },
+      {
+        title: "配息計算機",
+        description: "配息試算功能正在準備中。",
+        icon: HandCoins,
+        status: "內容整理中"
       }
     ]
   },
