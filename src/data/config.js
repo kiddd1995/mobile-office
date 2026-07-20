@@ -100,12 +100,6 @@ export const pageResources = {
         icon: Link2,
         status: "連結管理",
         href: "/admin/links"
-      },
-      {
-        title: "要保書範例",
-        description: "提供要保書填寫範例，方便新人與外勤快速參考。",
-        icon: FileCheck2,
-        status: "範例資料"
       }
     ]
   },

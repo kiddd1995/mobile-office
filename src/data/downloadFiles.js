@@ -1,7 +1,7 @@
 export const downloadFiles = [
   {
     id: "kgi-adgsil-usd-application-11503",
-    title: "凱基人壽招財進保「外幣」要保書",
+    title: "凱基人壽_招財進保「外幣」年金要保書",
     description: "這是外幣不要載錯，版本 11503",
     category: "要保書",
     fileType: "PDF",
@@ -13,8 +13,8 @@ export const downloadFiles = [
   },
   {
     id: "kgi-adgsil-application-11503",
-    title: "凱基人壽招財進保要保書",
-    description: "這是台幣的V，版本 11503",
+    title: "凱基人壽_招財進保年金要保書",
+    description: "這是台幣版要保書，版本 11503",
     category: "要保書",
     fileType: "PDF",
     fileUrl: "https://drive.google.com/file/d/1duN3lhUv2k0BhxTzbhxpUofW_wM9ox77/view?usp=drive_link",
@@ -25,7 +25,7 @@ export const downloadFiles = [
   },
   {
     id: "kgi-ndrsva-usd-application-11503",
-    title: "凱基人壽一生傳富「外幣」年金要保書",
+    title: "凱基人壽_一生傳富「外幣」年金要保書",
     description: "這是外幣，不要載錯了，版本 11503",
     category: "要保書",
     fileType: "PDF",
@@ -37,8 +37,8 @@ export const downloadFiles = [
   },
   {
     id: "kgi-ndqsva-application-11503",
-    title: "凱基人壽一生傳富年金要保書",
-    description: "這是台幣的V，版本 11503",
+    title: "凱基人壽_一生傳富年金要保書",
+    description: "這是台幣版要保書，版本 11503",
     category: "要保書",
     fileType: "PDF",
     fileUrl: "https://drive.google.com/file/d/1Ccix_NwkHXNzAW2CZPGiOjzT3K_eCr3n/view?usp=drive_link",
@@ -48,20 +48,8 @@ export const downloadFiles = [
     isActive: true
   },
   {
-    id: "kgi-application-sample",
-    title: "凱基人壽變額年金保險要保書－填寫範例",
-    description: "一生傳富／招財進保紙本填寫範例；65 歲以上建議使用電子投保，避免紙本流程較繁複",
-    category: "要保書",
-    fileType: "PDF",
-    fileUrl: "https://drive.google.com/file/d/1KcrYhsd_ZYZU_zlbo21cQoUPthOH5Q-k/view?usp=drive_link",
-    fileName: "",
-    updatedAt: "2026-07-13",
-    isNew: true,
-    isActive: true
-  },
-  {
     id: "chubb-hong-li-xin-xi-application",
-    title: "安達人壽鴻利鑫喜臺幣變額萬能壽險要保書",
+    title: "安達人壽_鴻利鑫喜臺幣變額萬能壽險要保書",
     description: "這是 U 系列，會退 150%",
     category: "要保書",
     fileType: "PDF",
@@ -73,7 +61,7 @@ export const downloadFiles = [
   },
   {
     id: "chubb-hong-li-xin-xi-application-sample",
-    title: "安達人壽鴻利鑫喜臺幣變額萬能壽險要保書－填寫範例",
+    title: "安達人壽_鴻利鑫喜臺幣變額萬能壽險要保書－填寫範例",
     description: "這是 U 系列的填寫範例",
     category: "要保書",
     fileType: "PDF",
@@ -85,7 +73,7 @@ export const downloadFiles = [
   },
   {
     id: "kgi-electronic-transfer-authorization",
-    title: "凱基人壽－轉帳授權－電子化授權專用版",
+    title: "凱基人壽_轉帳授權－電子化授權專用版",
     description: "電子化授權適用於網路銀行驗證",
     category: "帳務相關",
     fileType: "PDF",
@@ -97,8 +85,8 @@ export const downloadFiles = [
   },
   {
     id: "kgi-transfer-authorization-11503",
-    title: "凱基人壽－轉帳授權申請暨約定書 11503",
-    description: "轉帳授權台幣、外幣皆使用同一份文件",
+    title: "凱基人壽_轉帳授權申請暨約定書",
+    description: "轉帳授權台幣、外幣皆使用同一份文件，版本 11503",
     category: "帳務相關",
     fileType: "PDF",
     fileUrl: "https://drive.google.com/file/d/1w-zExFesC73fswY5blLF1ceqd9w5Suqc/view?usp=drive_link",
@@ -109,8 +97,8 @@ export const downloadFiles = [
   },
   {
     id: "kgi-debit-authorization-number-rules",
-    title: "凱基人壽－授權扣款編號填寫規則",
-    description: "紙本要保書第一頁左下角有授權扣款編號怎麼寫的規則",
+    title: "凱基人壽_授權扣款編號填寫規則",
+    description: "紙本要保書第一頁左下角有授權扣款編號",
     category: "帳務相關",
     fileType: "PDF",
     fileUrl: "https://drive.google.com/file/d/1ejTwnwnP3nYjvmGeGx-pVx-XdkccaXUj/view?usp=drive_link",
@@ -121,7 +109,7 @@ export const downloadFiles = [
   },
   {
     id: "chubb-financial-institution-payment-authorization",
-    title: "安達人壽－金融機構代繳保險費授權書",
+    title: "安達人壽_金融機構代繳保險費授權書",
     description: "轉帳授權書附有流水編號，不可影印使用",
     category: "帳務相關",
     fileType: "PDF",
@@ -132,8 +120,20 @@ export const downloadFiles = [
     isActive: true
   },
   {
+    id: "kgi-initial-premium-remittance-receipt",
+    title: "凱基人壽_首期繳款匯款憑證",
+    description: "首期繳款如果是匯款，跟客戶要匯款單後貼上交給櫃檯",
+    category: "帳務相關",
+    fileType: "PDF",
+    fileUrl: "https://drive.google.com/file/d/1dv6oUpqOSzTWq-SxXCKtCjjy7mXCOkZ-/view?usp=drive_link",
+    fileName: "",
+    updatedAt: "2026-07-19",
+    isNew: true,
+    isActive: true
+  },
+  {
     id: "restlessrock-life-insurance",
-    title: "磐石三寶－壽險",
+    title: "磐石三寶_壽險",
     description: "請使用單面列印",
     category: "磐石三寶",
     fileType: "PDF",
@@ -144,8 +144,20 @@ export const downloadFiles = [
     isActive: true
   },
   {
+    id: "restlessrock-life-insurance-sample",
+    title: "磐石三寶_壽險－填寫範例",
+    description: "三寶填寫範例",
+    category: "磐石三寶",
+    fileType: "PDF",
+    fileUrl: "https://drive.google.com/file/d/17-WqPpr5LhHAwbNebgHW4uNEkv2aM3Pn/view?usp=drive_link",
+    fileName: "",
+    updatedAt: "2026-07-19",
+    isNew: true,
+    isActive: true
+  },
+  {
     id: "kgi-ndrsva-annuity-calculator",
-    title: "凱基人壽－一生傳富變額年金保險（台外幣）試算表",
+    title: "凱基人壽_一生傳富變額年金保險（台外幣）試算表",
     description: "一生傳富台幣、外幣建議書試算表",
     category: "建議書",
     fileType: "Excel",
@@ -157,7 +169,7 @@ export const downloadFiles = [
   },
   {
     id: "kgi-adgsil-annuity-calculator",
-    title: "凱基人壽－招財進保變額年金保險（台外幣）試算表",
+    title: "凱基人壽_招財進保變額年金保險（台外幣）試算表",
     description: "招財進保台幣、外幣建議書試算表",
     category: "建議書",
     fileType: "Excel",
@@ -168,14 +180,50 @@ export const downloadFiles = [
     isActive: true
   },
   {
+    id: "kgi-application-sample",
+    title: "凱基人壽_變額年金保險要保書－填寫範例",
+    description: "一生傳富／招財進保紙本填寫範例；65 歲以上建議使用電子投保，避免紙本流程較繁複",
+    category: "要保書",
+    fileType: "PDF",
+    fileUrl: "https://drive.google.com/file/d/1KcrYhsd_ZYZU_zlbo21cQoUPthOH5Q-k/view?usp=drive_link",
+    fileName: "",
+    updatedAt: "2026-07-13",
+    isNew: true,
+    isActive: true
+  },
+  {
     id: "chubb-proposal-system",
-    title: "安達人壽建議書系統",
+    title: "安達人壽_建議書系統",
     description: "安達人壽全部建議書都可以用這個系統下載，進入後不用登入，直接按試算",
     category: "建議書",
     fileType: "網頁",
     fileUrl: "https://esfp.chubblife-vul.com.tw/illustration/login",
     fileName: "",
     updatedAt: "2026-07-14",
+    isNew: true,
+    isActive: true
+  },
+  {
+    id: "kgi-new-business-change-request",
+    title: "凱基人壽_新契約內容變更申請書",
+    description: "新契約內容變更申請書，版本 11312",
+    category: "其他",
+    fileType: "PDF",
+    fileUrl: "https://drive.google.com/file/d/19mplZlgJSnfhwCv1ihc3nVptaV93HLgR/view?usp=drive_link",
+    fileName: "",
+    updatedAt: "2026-07-19",
+    isNew: true,
+    isActive: true
+  },
+  {
+    id: "kgi-financial-disclosure-form",
+    title: "凱基人壽_財務告知書",
+    description: "新契約內容變更申請書，版本 11411",
+    category: "其他",
+    fileType: "PDF",
+    fileUrl: "https://drive.google.com/file/d/1n1nEKurOBVKAk0LJN15vZX7Cn0WegUUw/view?usp=drive_link",
+    fileName: "",
+    updatedAt: "2026-07-19",
     isNew: true,
     isActive: true
   }
